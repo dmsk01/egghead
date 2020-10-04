@@ -175,6 +175,7 @@ body {
     padding: 0px 20px 0px 0px;
   }
 }
+
 /*Menu hover line */
 @media (min-width: 768px) {
   ._box {
@@ -197,6 +198,7 @@ body {
   }
 }
 /* /Menu hover line */
+
 @media (max-width: 800px) {
   span.btn__content {
     background: none;
