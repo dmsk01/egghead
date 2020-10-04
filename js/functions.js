@@ -567,7 +567,27 @@ window.addEventListener('scroll', function () {
 });
 
 
-
+document.addEventListener('DOMContentLoaded', () => {
+  let line = document.querySelector('._line'),
+    menuLinks = document.querySelectorAll('.menu__link'),
+    viewportWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+  line.style.width = `${menuLinks[0].offsetWidth}px`;
+  menuLinks.forEach(link => {
+    link.addEventListener('mouseenter', (event) => {
+      line.style.width = `${event.currentTarget.offsetWidth}px`;
+      line.style.left = `${event.currentTarget.offsetLeft}px`;
+    });
+    link.addEventListener('mouseleave', () => {
+      if (parseInt(viewportWidth) > 992) {
+        line.style.width = `${menuLinks[0].offsetWidth}px`;
+        line.style.left = `40px`;
+      } else if ((parseInt(viewportWidth) < 768)) {
+        line.style.width = `${menuLinks[0].offsetWidth}px`;
+        line.style.left = `20px`;
+      }
+    });
+  });
+})
 
 
 
